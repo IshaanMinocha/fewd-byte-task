@@ -20,7 +20,7 @@ function Auth() {
     try {
       if (isLogin) {
         const response = await axios.post(
-          'http://panel.mait.ac.in:8001/auth/login/',
+          'https://panel.mait.ac.in:8001/auth/login/',
           {
             email,
             password,
@@ -43,7 +43,7 @@ function Auth() {
       } else {
         // Register
         const response = await axios.post(
-          'http://panel.mait.ac.in:8001/auth/register/',
+          'https://panel.mait.ac.in:8001/auth/register/',
           {
             name,
             email,

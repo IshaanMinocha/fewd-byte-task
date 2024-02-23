@@ -9,7 +9,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
-                const response = await fetch('http://panel.mait.ac.in:8001/auth/user-details/', {
+                const response = await fetch('https://panel.mait.ac.in:8001/auth/user-details/', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access_token')}`,
                     },
@@ -23,7 +23,7 @@ const Dashboard = () => {
 
         const fetchPoems = async () => {
             try {
-                const response = await fetch('http://panel.mait.ac.in:8001/poem/get/', {
+                const response = await fetch('https://panel.mait.ac.in:8001/poem/get/', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access_token')}`,
                     },
@@ -42,7 +42,7 @@ const Dashboard = () => {
     const handlePoemSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://panel.mait.ac.in:8001/poem/create/', {
+            const response = await fetch('https://panel.mait.ac.in:8001/poem/create/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
