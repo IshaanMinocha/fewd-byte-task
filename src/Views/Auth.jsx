@@ -60,6 +60,8 @@ function Auth() {
         if (response.status === 200) {
           alert('User registered successfully. Please login.');
           window.location.href = '/auth';
+        } else if (response.status === 400){
+          alert(`User Already Registered`);
         } else {
           alert(`Registration Done: ${data.message}`);
         }
