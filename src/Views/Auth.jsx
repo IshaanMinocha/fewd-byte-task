@@ -20,7 +20,7 @@ function Auth() {
     try {
       if (isLogin) {
         const response = await axios.post(
-          'https://panel.mait.ac.in:8001/auth/login/',
+          'http://panel.mait.ac.in:8001/auth/login/',
           {
             email,
             password,
@@ -43,7 +43,7 @@ function Auth() {
       } else {
         // Register
         const response = await axios.post(
-          'https://panel.mait.ac.in:8001/auth/register/',
+          'http://panel.mait.ac.in:8001/auth/register/',
           {
             name,
             email,
@@ -60,7 +60,7 @@ function Auth() {
         if (response.status === 200) {
           alert('User registered successfully. Please login.');
           window.location.href = '/auth';
-        } else if (response.status === 400){
+        } else if (response.status === 401){
           alert(`User Already Registered`);
         } else {
           alert(`Registration Done: ${data.message}`);
